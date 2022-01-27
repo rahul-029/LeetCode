@@ -2,6 +2,7 @@ package com.leetcode.Arrays;
 
 import java.util.Arrays;
 
+// Program to rotate an array - Brute force approach.
 public class RotateArray {
 
     public static void main(String[] args) {

@@ -20,10 +20,10 @@ public class SelectionSort {
         for(int i=0; i < arr.length; i++){
 
             int last = arr.length - i -1;
-            int max = findMax(arr, last);
+            int maxIndex = findMax(arr, last);
 
-            int temp = arr[max];
-            arr[max] = arr[last];
+            int temp = arr[maxIndex];
+            arr[maxIndex] = arr[last];
             arr[last] = temp;
         }
     }

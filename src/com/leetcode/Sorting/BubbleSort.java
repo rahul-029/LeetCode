@@ -25,7 +25,7 @@ public class BubbleSort {
                 }
             }
 
-            if(!swapped){ // if list is already sorted, there will be no swaps, hence, swapped = false and will break out of th eloop
+            if(!swapped){ // if list is already sorted, there will be no swaps, hence, swapped = false and will break out of the loop
                 break;
             }
 

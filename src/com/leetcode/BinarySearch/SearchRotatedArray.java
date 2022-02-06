@@ -9,7 +9,8 @@ public class SearchRotatedArray {
         int target = 2;
         int pivotIndex = findPivot(arr, target);  // finding the pivot, smallest number
         System.out.println( "Pivot Index is: " + pivotIndex);
-        
+
+        // Decide the start and end offsets before applying binary search
         int start = 0;
         int end = arr.length -1;
         if(arr[0] <= target && target >= arr[pivotIndex]){

@@ -4,9 +4,9 @@ public class SkipString {
     public static void main(String[] args) {
         String originalString = "bacchad";
         String ans = "";
-        skip(ans, originalString);
-        System.out.println(skip2(originalString));
-        System.out.println(skipApple("baccapplehad"));
+        skip(ans, originalString); // skip "a" from the string and print the ans
+        System.out.println(skip2(originalString)); // returning String at every function call
+        System.out.println(skipApple("baccapplehad")); // return string without "apple" in it
     }
 
     private static void skip(String ans, String originalString) {

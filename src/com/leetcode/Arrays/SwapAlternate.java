@@ -15,9 +15,11 @@ public class SwapAlternate {
     private static void swapAlternateElements(int[] arr) {
 
         for(int i=0; i < arr.length; i+=2){
-            int temp = arr[i];
-            arr[i] = arr[i+1];
-            arr[i+1] = temp;
+            if(i+1 < arr.length) {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
         }
     }
 }

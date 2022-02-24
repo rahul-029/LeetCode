@@ -19,5 +19,8 @@ public class SinglyLinkedList {
         System.out.println(sll.deleteFromFirst());
         sll.display();
 
+        System.out.println(sll.deleteFromLast());
+        sll.display();
+
     }
 }

@@ -103,6 +103,25 @@ public class SinglyLL {
 
     }
 
+
+    public int deleteAtIndex(int index){
+        if(index == 0){
+            deleteFromFirst();
+        }
+
+        if(index == size){
+            deleteFromLast();
+        }
+
+        Node previousNode = getNode(index-1);
+        int value = previousNode.next.value;
+        previousNode.next = previousNode.next.next;
+
+        size--;
+        return value;
+
+    }
+
     public Node getNode(int index){
         Node temp = head;
         for(int i=0; i < index; i++){

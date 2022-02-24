@@ -64,6 +64,8 @@ public class SinglyLL {
         Node node = new Node(value);
         node.next = temp.next;
         temp.next = node;
+
+        size++;
     }
 
 
@@ -79,8 +81,35 @@ public class SinglyLL {
         Node temp = head;
         head = temp.next;
 
+        size--;
+
         return value;
 
+    }
+
+    public int deleteFromLast(){
+        if(head == null){
+            System.out.println("List is empty");
+            return -1;
+        }
+
+        int value = tail.value;
+        Node secondLast = getNode(size-2);
+        tail = secondLast;
+        tail.next = null;
+
+        size--;
+        return value;
+
+    }
+
+    public Node getNode(int index){
+        Node temp = head;
+        for(int i=0; i < index; i++){
+            temp = temp.next;
+        }
+
+        return temp;
     }
 
     public void display(){

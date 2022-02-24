@@ -15,6 +15,7 @@ public class SinglyLL {
         }
     }
 
+    // Insert Operations
     public void insertAtFirst(int value){
 
         Node node = new Node(value);
@@ -63,6 +64,23 @@ public class SinglyLL {
         Node node = new Node(value);
         node.next = temp.next;
         temp.next = node;
+    }
+
+
+    // Delete Operations
+
+    public int deleteFromFirst(){
+
+        if(head == null){
+            System.out.println("List is empty");
+            return -1;
+        }
+        int value = head.value;
+        Node temp = head;
+        head = temp.next;
+
+        return value;
+
     }
 
     public void display(){

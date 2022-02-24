@@ -32,6 +32,11 @@ public class SinglyLL {
     public void insertAtLast(int value){
 
         Node node = new Node(value);
+
+        if(head == null){    // if head is null --> list is empty
+            insertAtFirst(value);
+            return;
+        }
         tail.next = node;
         tail = node;
 

@@ -22,5 +22,8 @@ public class SinglyLinkedList {
         System.out.println(sll.deleteFromLast());
         sll.display();
 
+        System.out.println(sll.deleteAtIndex(2));
+        sll.display();
+
     }
 }

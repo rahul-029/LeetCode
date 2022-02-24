@@ -43,6 +43,28 @@ public class SinglyLL {
         size++;
     }
 
+    public void insertAtIndex(int value, int index){
+
+        if(index == 0){
+            insertAtFirst(value);
+            return;
+        }
+
+        if(index == size){
+            insertAtLast(value);
+            return;
+        }
+
+        Node temp = head;
+        for(int i=1; i < index; i++){
+            temp = temp.next;
+        }
+
+        Node node = new Node(value);
+        node.next = temp.next;
+        temp.next = node;
+    }
+
     public void display(){
 
         Node temp = head;

@@ -10,6 +10,10 @@ public class SinglyLinkedList {
         sll.insertAtFirst(2);
         sll.insertAtFirst(1);
         sll.insertAtLast(5);
+        sll.display();
+
+        sll.insertAtIndex(100, 3);
+
 
         sll.display();
 

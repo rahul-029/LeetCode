@@ -33,10 +33,19 @@ public class DoublyLL {
     public void display(){
 
         Node temp = head;
+        Node last = null;
         while(temp != null) {
+            last = temp;
             System.out.print(temp.value + " --> " );
             temp = temp.next;
         }
         System.out.println("END");
+
+        //Print in reverse
+        while(last != null){
+            System.out.print(last.value + " --> ");
+            last = last.prev;
+        }
+        System.out.println("START");
     }
 }

@@ -30,6 +30,26 @@ public class DoublyLL {
         head = node;
     }
 
+    public void insertAtLast(int value){
+
+        if(head == null){
+            insertAtFirst(value);
+            return;
+        }
+
+        Node last = head;
+        Node node = new Node(value);
+
+        while(last.next != null){
+            last = last.next;
+        }
+
+        last.next = node;
+        node.prev = last;
+        node.next = null;
+
+    }
+
     public void display(){
 
         Node temp = head;

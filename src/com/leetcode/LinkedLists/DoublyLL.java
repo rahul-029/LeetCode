@@ -50,6 +50,27 @@ public class DoublyLL {
 
     }
 
+    public void insertAfter(int value, int index){
+
+        Node node = new Node(value);
+        Node insertAfter = getNode(index);
+
+        node.prev = insertAfter;
+        node.next = insertAfter.next;
+        insertAfter.next.prev = node;
+        insertAfter.next = node;
+    }
+
+    private Node getNode(int index) {
+
+        Node temp = head;
+        for(int i=0; i < index; i++){
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+
     public void display(){
 
         Node temp = head;

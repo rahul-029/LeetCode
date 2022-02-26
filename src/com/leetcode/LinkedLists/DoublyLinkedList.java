@@ -16,6 +16,7 @@ public class DoublyLinkedList {
         dll.insertAtLast(3);
         dll.insertAtLast(4);
         dll.insertAtLast(5);
+        dll.insertAfter(8, 2);
 
 
         dll.display();

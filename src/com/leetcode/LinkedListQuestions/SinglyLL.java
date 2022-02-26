@@ -42,6 +42,42 @@ public class SinglyLL {
         }
     }
 
+    // Question -- merge two sorted lists
+    public SinglyLL merge(SinglyLL firstList, SinglyLL secondList){
+
+        //  firstList:  1 --> 3 --> 5
+        //  secondList: 1 --> 2 --> 9 --> 14
+
+        Node first = firstList.head;
+        Node second = secondList.head;
+
+        SinglyLL newList = new SinglyLL();
+        while(first.next != null && second.next != null){
+
+            if(first.value < second.value){
+                newList.insertAtLast(first.value);
+                first = first.next;
+            } else {
+                newList.insertAtLast(second.value);
+                second = second.next;
+            }
+        }
+
+        while(first != null){
+            newList.insertAtLast(first.value);
+            first = first.next;
+        }
+
+        while (second != null){
+            newList.insertAtLast(second.value);
+            second = second.next;
+        }
+
+        return newList;
+
+
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){

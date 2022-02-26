@@ -12,5 +12,7 @@ public class SinglyLinkedListExercise {
         sll.insertAtLast(4);
 
         sll.display();
+        sll.removeDuplicates();
+        sll.display();
     }
 }

@@ -30,6 +30,18 @@ public class SinglyLL {
 
     }
 
+    // Questions
+    public void removeDuplicates(){
+        Node node = head;
+        while(node.next != null){
+            if(node.value == node.next.value){
+                node.next = node.next.next;
+            } else {
+                node = node.next;
+            }
+        }
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){

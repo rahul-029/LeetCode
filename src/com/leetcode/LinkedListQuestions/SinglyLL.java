@@ -30,6 +30,24 @@ public class SinglyLL {
 
     }
 
+    // Don't use this...system may give GC overhead/OutOfMemory :)
+    public void createCycle(){
+        Node temp = tail;
+        Node node = getNode(2);
+
+        tail.next = node;
+    }
+
+    private Node getNode(int index) {
+
+        Node temp = head;
+        for(int i=0; i < index; i++){
+            temp = temp.next;
+        }
+
+        return temp;
+    }
+
     // Questions -- remove duplicates from LL
     public void removeDuplicates(){
         Node node = head;

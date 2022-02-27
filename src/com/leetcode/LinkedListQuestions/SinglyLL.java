@@ -113,6 +113,29 @@ public class SinglyLL {
         return false;
     }
 
+    // Find the length of the cycle in linkedlist
+    public int findCycleLength(){
+
+        Node fast = head;
+        Node slow = head;
+        int length = 0;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow){
+                Node temp = slow;
+                do{
+                    temp = temp.next;
+                    length++;
+                } while(temp != slow);
+            }
+        }
+
+        return length;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){

@@ -30,7 +30,7 @@ public class SinglyLL {
 
     }
 
-    // Questions
+    // Questions -- remove duplicates from LL
     public void removeDuplicates(){
         Node node = head;
         while(node.next != null){
@@ -76,6 +76,23 @@ public class SinglyLL {
         return newList;
 
 
+    }
+
+    // Detect cycle/loop in linkedList
+    public boolean hasCycle(){
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void display(){

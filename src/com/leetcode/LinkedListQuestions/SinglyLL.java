@@ -136,6 +136,20 @@ public class SinglyLL {
         return length;
     }
 
+    // Find middle of linkedList
+    public Node findMiddleNode(){
+
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null){
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -144,5 +158,23 @@ public class SinglyLL {
         }
 
         System.out.println("END");
+    }
+
+
+    public static void main(String[] args) {
+        SinglyLL sll = new SinglyLL();
+        sll.insertAtLast(1);
+        sll.insertAtLast(1);
+        sll.insertAtLast(1);
+        sll.insertAtLast(2);
+        sll.insertAtLast(4);
+        sll.insertAtLast(4);
+
+        /*sll.display();
+        sll.removeDuplicates();*/
+        sll.display();
+
+        Node middleNode = sll.findMiddleNode();
+        System.out.println("Middle node is: " +middleNode.value);
     }
 }

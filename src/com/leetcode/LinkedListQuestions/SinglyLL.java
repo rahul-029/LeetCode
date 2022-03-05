@@ -150,6 +150,37 @@ public class SinglyLL {
         return slow;
     }
 
+    // find whether a number is a Happy number.
+    public boolean isHappy(int num){
+
+        int slow = num;
+        int fast = num;
+
+        do{
+            slow = findSquare(slow);
+            fast = findSquare(findSquare(fast));
+        } while (slow != fast);
+
+        if(slow == 1){
+            return true;
+        }
+
+        return false;
+    }
+
+    private int findSquare(int n){
+
+        int digit = 0;
+        int square = 0;
+        while(n > 0){
+            digit = n % 10;
+            square += digit * digit;
+            n = n/10;
+        }
+
+        return square;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -170,11 +201,13 @@ public class SinglyLL {
         sll.insertAtLast(4);
         sll.insertAtLast(4);
 
-        /*sll.display();
-        sll.removeDuplicates();*/
+        sll.display();
+        sll.removeDuplicates();
         sll.display();
 
         Node middleNode = sll.findMiddleNode();
         System.out.println("Middle node is: " +middleNode.value);
+
+        System.out.println(sll.isHappy(19));
     }
 }

@@ -181,6 +181,32 @@ public class SinglyLL {
         return square;
     }
 
+    // reverse a linked list
+    public void reverseList(){
+
+        if(head == null){
+            return;
+        }
+
+       Node prev = null;
+       Node present = head;
+       Node next = present.next;
+
+       while(present != null){
+
+           present.next = prev;
+           prev = present;
+           present = next;
+           if(next != null){
+               next = next.next;
+           }
+       }
+
+       head = prev;
+
+    }
+
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -194,20 +220,28 @@ public class SinglyLL {
 
     public static void main(String[] args) {
         SinglyLL sll = new SinglyLL();
-        sll.insertAtLast(1);
+        /*sll.insertAtLast(1);
         sll.insertAtLast(1);
         sll.insertAtLast(1);
         sll.insertAtLast(2);
         sll.insertAtLast(4);
+        sll.insertAtLast(4);*/
+
+        sll.insertAtLast(5);
         sll.insertAtLast(4);
+        sll.insertAtLast(3);
+        sll.insertAtLast(2);
+        sll.insertAtLast(1);
+
 
         sll.display();
-        sll.removeDuplicates();
+        //sll.removeDuplicates();
+        sll.reverseList();
         sll.display();
 
-        Node middleNode = sll.findMiddleNode();
+        /*Node middleNode = sll.findMiddleNode();
         System.out.println("Middle node is: " +middleNode.value);
 
-        System.out.println(sll.isHappy(19));
+        System.out.println(sll.isHappy(19));*/
     }
 }

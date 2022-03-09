@@ -136,6 +136,34 @@ public class SinglyLL {
         return length;
     }
 
+    // Find the starting point of the loop
+    public int findStartOfLoop(){
+
+        Node fast = head;
+        Node slow = head;
+
+        while(fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast){
+                break;
+            }
+        }
+
+        if(slow != fast){
+            return -1;
+        }
+        slow = head;
+
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow.value;
+    }
+
     // Find middle of linkedList
     public Node findMiddleNode(){
 
@@ -234,10 +262,14 @@ public class SinglyLL {
         sll.insertAtLast(1);
 
 
-        sll.display();
+        //sll.display();
         //sll.removeDuplicates();
-        sll.reverseList();
-        sll.display();
+        //sll.reverseList();
+       // sll.display();
+
+        sll.createCycle();
+        int i = sll.findStartOfLoop();
+        System.out.println("Loop starting at: " +i);
 
         /*Node middleNode = sll.findMiddleNode();
         System.out.println("Middle node is: " +middleNode.value);

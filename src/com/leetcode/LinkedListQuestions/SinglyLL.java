@@ -234,6 +234,30 @@ public class SinglyLL {
 
     }
 
+    // Overloaded reverseList method
+    public Node reverseList(Node node){
+
+        if(head == null){
+            return node;
+        }
+
+        Node prev = null;
+        Node current = head;
+        Node next = current.next;
+
+        while(current != null ){
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+
+        head = prev;
+        return prev;
+    }
+
 
     public void display(){
         Node temp = head;
@@ -277,5 +301,9 @@ public class SinglyLL {
         System.out.println("Middle node is: " +middleNode.value);*/
 
         //System.out.println(sll.isHappy(19));
+
+        sll.display();
+        sll.reverseList(sll.head);
+        sll.display();
     }
 }

@@ -165,7 +165,7 @@ public class SinglyLL {
     }
 
     // Find middle of linkedList
-    public Node findMiddleNode(){
+    public Node findMiddleNode(Node head){
 
         Node fast = head;
         Node slow = head;
@@ -255,11 +255,13 @@ public class SinglyLL {
         sll.insertAtLast(4);
         sll.insertAtLast(4);*/
 
-        sll.insertAtLast(5);
-        sll.insertAtLast(4);
-        sll.insertAtLast(3);
-        sll.insertAtLast(2);
         sll.insertAtLast(1);
+        sll.insertAtLast(2);
+        sll.insertAtLast(3);
+        sll.insertAtLast(4);
+        sll.insertAtLast(5);
+        sll.insertAtLast(6);
+
 
 
         //sll.display();
@@ -267,13 +269,13 @@ public class SinglyLL {
         //sll.reverseList();
        // sll.display();
 
-        sll.createCycle();
+        /*sll.createCycle();
         int i = sll.findStartOfLoop();
-        System.out.println("Loop starting at: " +i);
+        System.out.println("Loop starting at: " +i);*/
 
-        /*Node middleNode = sll.findMiddleNode();
-        System.out.println("Middle node is: " +middleNode.value);
+        /*Node middleNode = sll.findMiddleNode(sll.head);
+        System.out.println("Middle node is: " +middleNode.value);*/
 
-        System.out.println(sll.isHappy(19));*/
+        //System.out.println(sll.isHappy(19));
     }
 }

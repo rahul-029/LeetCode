@@ -259,6 +259,45 @@ public class SinglyLL {
     }
 
 
+    public Node reverseBetween(Node head, int left, int right){
+        if(left == right){
+            return head;
+        }
+
+        Node prev = null;
+        Node current = head;
+
+        // skip the left - 1 nodes
+        for (int i = 0; current != null && i < left - 1; i++) {
+            prev = current;
+            current = current.next;
+        }
+
+        Node last = prev;
+        Node newEnd = current;
+        Node next = current.next;
+
+        // reverse between left and right
+        for (int i = 0; current != null && i < right - left + 1; i++) {
+            current.next = prev;
+            prev = current;
+            current = next;
+            if(next != null){
+                next = next.next;
+            }
+        }
+
+        if(last != null){
+            last.next = prev;
+        } else{
+            head = prev;
+        }
+        newEnd.next = current;
+
+        return head;
+    }
+
+
     // method to check whether a list is palindrome.
     public boolean isPalindrome(Node head){
         Node middleNode = findMiddleNode(head);
@@ -329,13 +368,23 @@ public class SinglyLL {
         sll.reverseList(sll.head);
         sll.display();*/
 
-        sll.insertAtLast(1);
+       /* sll.insertAtLast(1);
         sll.insertAtLast(2);
         sll.insertAtLast(3);
         sll.insertAtLast(3);
         sll.insertAtLast(2);
         sll.insertAtLast(1);
 
-        System.out.println(sll.isPalindrome(sll.head));
+        System.out.println(sll.isPalindrome(sll.head));*/
+
+        sll.insertAtLast(1);
+        sll.insertAtLast(2);
+        sll.insertAtLast(3);
+        sll.insertAtLast(4);
+        sll.insertAtLast(5);
+
+        sll.display();
+        sll.reverseBetween(sll.head, 2, 4);
+        sll.display();
     }
 }

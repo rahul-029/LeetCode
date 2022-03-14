@@ -259,6 +259,29 @@ public class SinglyLL {
     }
 
 
+    // method to check whether a list is palindrome.
+    public boolean isPalindrome(Node head){
+        Node middleNode = findMiddleNode(head);
+        Node secondHead = reverseList(middleNode);
+        Node reReverseList =  secondHead;
+
+
+        while(head != null && secondHead != null){
+            if(head.value != secondHead.value){
+                break;
+            }
+            head = head.next;
+            secondHead = secondHead.next;
+        }
+
+        reverseList(reReverseList);
+        if(head == null || secondHead == null){
+            return true;
+        }
+        return false;
+    }
+
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -279,12 +302,12 @@ public class SinglyLL {
         sll.insertAtLast(4);
         sll.insertAtLast(4);*/
 
-        sll.insertAtLast(1);
+       /* sll.insertAtLast(1);
         sll.insertAtLast(2);
         sll.insertAtLast(3);
         sll.insertAtLast(4);
         sll.insertAtLast(5);
-        sll.insertAtLast(6);
+        sll.insertAtLast(6);*/
 
 
 
@@ -302,8 +325,17 @@ public class SinglyLL {
 
         //System.out.println(sll.isHappy(19));
 
-        sll.display();
+        /*sll.display();
         sll.reverseList(sll.head);
-        sll.display();
+        sll.display();*/
+
+        sll.insertAtLast(1);
+        sll.insertAtLast(2);
+        sll.insertAtLast(3);
+        sll.insertAtLast(3);
+        sll.insertAtLast(2);
+        sll.insertAtLast(1);
+
+        System.out.println(sll.isPalindrome(sll.head));
     }
 }

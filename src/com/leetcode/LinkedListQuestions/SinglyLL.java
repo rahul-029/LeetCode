@@ -170,7 +170,7 @@ public class SinglyLL {
         Node fast = head;
         Node slow = head;
 
-        while(fast != null){
+        while(fast != null && fast.next != null){
             fast = fast.next.next;
             slow = slow.next;
         }
@@ -235,10 +235,10 @@ public class SinglyLL {
     }
 
     // Overloaded reverseList method
-    public Node reverseList(Node node){
+    public Node reverseList(Node head){
 
         if(head == null){
-            return node;
+            return head;
         }
 
         Node prev = null;
@@ -321,6 +321,33 @@ public class SinglyLL {
     }
 
 
+    // reorder linked list
+    public void reOrderList(Node head){
+
+        if(head == null){
+            return;
+        }
+
+        Node middleNode = findMiddleNode(head);
+        Node secondHead = reverseList(middleNode);
+        Node firstHead = head;
+
+        while(firstHead != null && secondHead != null){
+
+            Node temp = firstHead.next;
+            firstHead.next = secondHead;
+            firstHead = temp;
+
+            temp = secondHead.next;
+            secondHead.next = firstHead;
+            secondHead = temp;
+        }
+
+        if(firstHead != null){
+            firstHead.next = null;
+        }
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -377,14 +404,18 @@ public class SinglyLL {
 
         System.out.println(sll.isPalindrome(sll.head));*/
 
+
+
         sll.insertAtLast(1);
         sll.insertAtLast(2);
         sll.insertAtLast(3);
         sll.insertAtLast(4);
         sll.insertAtLast(5);
+        sll.insertAtLast(6);
+        sll.insertAtLast(7);
 
         sll.display();
-        sll.reverseBetween(sll.head, 2, 4);
+        sll.reOrderList(sll.head);
         sll.display();
     }
 }

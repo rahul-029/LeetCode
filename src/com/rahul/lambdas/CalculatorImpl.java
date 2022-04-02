@@ -2,24 +2,23 @@ package com.rahul.lambdas;
 
 
 interface Calculator{
-    void switchOn();
+    //void switchOn();
+    void printValue(int input);
 }
 
 
 public class CalculatorImpl {
 
 
-   /* @Override
-    public void switchOn() {
-        System.out.println("Switch On");
-    }*/
-
     public static void main(String[] args) {
 
-        Calculator calculator = () -> {
+        /*Calculator calculator = () -> {
             System.out.println("Switch On");
         };
 
-        calculator.switchOn();
+        calculator.switchOn();*/
+
+        Calculator calculator = (input) -> System.out.println(input);
+        calculator.printValue(1234);
     }
 }

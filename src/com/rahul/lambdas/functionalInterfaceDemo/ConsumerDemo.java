@@ -1,4 +1,4 @@
-package com.rahul.lambdas.consumerDemo;
+package com.rahul.lambdas.functionalInterfaceDemo;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,8 +1,6 @@
 package com.rahul.lambdas.streamapi;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class StreamSortingExample {
 
@@ -25,6 +23,23 @@ public class StreamSortingExample {
 
         // sorted in descending order by Name
         getEmployees().stream().sorted(Comparator.comparing(Employee::getName).reversed()).forEach(System.out::println);
+
+        // Sorting a map
+        Map<Employee, Integer> employeeMap = new HashMap<>();
+        employeeMap.put(new Employee(1, "Stacy", 25000), 20);
+        employeeMap.put(new Employee(2, "Ashley", 20000), 40);
+        employeeMap.put(new Employee(3, "Lita", 50000), 50);
+        employeeMap.put(new Employee(4, "Trish", 45000), 60);
+
+        System.out.println("--------------------");
+
+        // sorted in ascending order by Name
+        employeeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.comparing(Employee::getName))).forEach(System.out::println);
+
+        System.out.println("--------------------");
+
+        // sorted in descending order by Name
+        employeeMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.comparing(Employee::getName).reversed())).forEach(System.out::println);
     }
 
     private static List<Employee> getEmployees() {

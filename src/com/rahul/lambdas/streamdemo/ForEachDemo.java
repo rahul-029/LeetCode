@@ -26,5 +26,8 @@ public class ForEachDemo {
         map.entrySet().stream().forEach(obj -> System.out.println(obj));
         map.forEach((key, value) -> System.out.println(key + ":" + value));
 
+        //filter
+        map.entrySet().stream().filter((k) -> k.getKey() % 2 == 0).forEach(System.out::println);
+
     }
 }

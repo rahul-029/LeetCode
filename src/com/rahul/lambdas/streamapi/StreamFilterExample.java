@@ -30,6 +30,17 @@ public class StreamFilterExample {
                 .stream()
                 .filter((product) -> product.getPrice() > 25000)
                 .forEach(System.out::println);
+
+        getProductByName("Predator laptop");
+    }
+
+    // usage of optional in StreamAPI
+    private static Product getProductByName(String name){
+
+        return getProducts()
+                .stream()
+                .filter((product) -> product.getName().equalsIgnoreCase(name))
+                .findAny().orElseThrow(() -> new IllegalArgumentException("No Such Product found"));
     }
 
     private static List<Product> getProducts(){
@@ -55,6 +66,10 @@ class Product {
         this.id = id;
         this.name = name;
         this.price = price;
+    }
+
+    public Product(){
+
     }
 
     public String getId() {

@@ -19,6 +19,7 @@ public class MapVsFlatmap {
         List<List<String>> phoneNumbers = getCustomers().stream().map(customers -> customers.getPhoneNumbers()).collect(Collectors.toList());
         System.out.println(phoneNumbers);
 
+        // flatMap needs a stream as an argument
         List<String> cellphoneNumbers = getCustomers().stream().flatMap(customer -> customer.getPhoneNumbers().stream()).collect(Collectors.toList());
         System.out.println(cellphoneNumbers);
     }

@@ -7,8 +7,8 @@ public class FirstLastPosition {
 
     public static void main(String[] args) {
 
-        int [] arr = {5, 7, 7, 7, 7, 8, 8, 10};
-        int target = 8;
+        int [] arr = {5,7,7,8,8,10};
+        int target = 6;
 
         int [] answer = findFirstLastOccurence(arr, target);
         System.out.println(Arrays.toString(answer));
@@ -32,7 +32,7 @@ public class FirstLastPosition {
 
     public static int search(int [] arr, int target, boolean firstStartingIndex){
 
-        int ans = 0;
+        int ans = -1;
         int start = 0;
         int end = arr.length -1;
 
